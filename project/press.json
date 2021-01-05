@@ -1,0 +1,5 @@
+{
+  "main": "main.py",
+  "dependencies": ["replit", "colorama", "BD103-0.1.6-py3-none-any.whl"],
+  "include": ["template.txt"]
+}

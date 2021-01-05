@@ -6,9 +6,9 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="presspy",
-    version="0.0.1",
+    version="1.0.0",
     author="BD103",
-    author_email="author@example.com",
+    author_email="dont@stalk.me",
     description="A Python Compression Software",
     long_description=long_description,  # Keep
     long_description_content_type="text/markdown",
@@ -22,5 +22,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
         "Development Status :: 1 - Planning",
     ],
-    python_requires=">=3.6",
+    python_requires=">=3.7",
 )
