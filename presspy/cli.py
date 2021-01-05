@@ -4,6 +4,7 @@ import presspy
 
 @click.group()
 def cli():
+    "A Python Project Compression Software"
     pass
 
 
@@ -15,21 +16,21 @@ def cli():
     is_flag=True,
     help="Keeps the source program after running in a folder.",
 )
-def run(file):
+def run(file, keep):
     "Runs a .press file."
     print("Running")
-    presspy.run(file)
+    presspy.run(file, keep)
 
 
 @cli.command()
 @click.argument("path")
-@click.option("--main", default="main.py", help="The main file to scan when pressing.")
-def press(path, main):
+def press(path):
     "Presses a Python program into a .press file."
-    print("Pressing.")
+    presspy.press(path)
 
 
 @cli.command()
 @click.argument("file")
 def extract(file):
+    "Puts source of .press file into folder."
     presspy.extract(file)

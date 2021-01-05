@@ -40,7 +40,7 @@ def extract(file):
     os.chdir("../")
 
     end_time = time.time()
-    print("Process finished in " + end_time - start_time + " seconds.")
+    print("Process finished in " + str(end_time - start_time) + " seconds.")
     return meta
 
 
@@ -69,6 +69,7 @@ def press(path):
 
     include = []
     include.append(meta["main"])
+    include.append("press.json")
     for i in meta["dependencies"]:
         if os.path.isfile(i):
             include.append(i)
@@ -83,4 +84,4 @@ def press(path):
     program.close()
 
     end_time = time.time()
-    print("Process finished in " + end_time - start_time + " seconds.")
+    print("Process finished in " + str(end_time - start_time) + " seconds.")
