@@ -27,7 +27,7 @@ This gives you a list of available commands and options. There are three main fu
 Runs a `.press` file.
 
 Usage:
-```
+```console
 presspy run file --keep
 ```
 
@@ -42,7 +42,7 @@ Use this flag if you wish to keep the extracted source after running.
 Presses a Python program into a `.press` file.
 
 Usage:
-```
+```console
 presspy press path
 ```
 
@@ -54,7 +54,7 @@ The folder or directory your source code is in relative to your current director
 Puts the source of a `.press` file into a folder.
 
 Usage:
-```
+```console
 presspy extract file
 ```
 
