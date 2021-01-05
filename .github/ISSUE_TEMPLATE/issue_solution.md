@@ -1,6 +1,6 @@
 ---
 name: Issue Solution
-about: Suggest an idea for this project
+about: Suggest a solution to a specific issue you've encountered / seen
 title: ''
 labels: enhancement
 assignees: ''
