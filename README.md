@@ -17,7 +17,47 @@ pip install --upgrade git+https://github.com/BD103/presspy
 
 ## How to Use
 
-_Work in Progress. Come back soon!_
+PressPy is purely console based. Open up command prompt, or another console likewise, and type `presspy`.
+This gives you a list of available commands and options. There are three main functions:
+
+### Run
+
+Runs a `.press` file.
+
+Usage:
+```
+presspy run file --keep
+```
+
+File:
+The location of your `.press` file relative to your current directory.
+
+--keep:
+Use this flag if you wish to keep the extracted source after running.
+
+### Press
+
+Presses a Python program into a `.press` file.
+
+Usage:
+```
+presspy press path
+```
+
+Path:
+The folder or directory your source code is in relative to your current directory. This folder must contain a press.json file. See the [Wiki](https://github.com/BD103/PressPy/wiki) for more information.
+
+### Extract
+
+Puts the source of a `.press` file into a folder.
+
+Usage:
+```
+presspy extract file
+```
+
+File:
+The location of your `.press` file relative to your current directory.
 
 ## Contributing
 
