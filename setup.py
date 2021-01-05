@@ -10,7 +10,7 @@ setuptools.setup(
     author="BD103",
     author_email="author@example.com",
     description="A Python Compression Software",
-    long_description=long_description, # Keep
+    long_description=long_description,  # Keep
     long_description_content_type="text/markdown",
     url="https://github.com/BD103/PressPy",
     packages=setuptools.find_packages(),
@@ -20,5 +20,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
         "Development Status :: 1 - Planning",
     ],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )
