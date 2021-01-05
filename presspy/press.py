@@ -46,6 +46,7 @@ def run(file, keep):
     if keep == False:
         shutil.rmtree("program")
 
+
 def press(path):
     start_time = time.time()
     os.chdir(path)
@@ -53,16 +54,16 @@ def press(path):
     print("Reading press.json")
     with open("press.json") as raw:
         meta = json.loads(raw.read())
-    
+
     include = []
     include.append(meta["main"])
     for i in meta["dependencies"]:
         if os.path.isfile(i):
             include.append(i)
-    
+
     for i in meta["include"]:
         include.append(i)
-    
+
     print("Writing .press file")
     program = ZipFile("program.press", mode="w")
     for i in include:
