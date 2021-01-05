@@ -1,5 +1,17 @@
-import os, time, ntpath, shutil, json, sys
+import os
+import time
+import shutil
+import json
+import sys
+import pkg_resources
 from zipfile import ZipFile
+
+
+def info():
+    print("PressPy Compression Software")
+    print("Designed by BD103")
+    print("Version: " + pkg_resources.get_distribution(__name__).version)
+    print('Enter "presspy" for help')
 
 
 def extract(file):
@@ -37,13 +49,13 @@ def run(file, keep):
 
     try:
         os.system("python program/" + meta["main"])
-    except:
+    except:  # noqa: E722
         print(
             "An error occured in the program. Please contact the developer.",
             file=sys.stderr,
         )
 
-    if keep == False:
+    if keep is False:
         shutil.rmtree("program")
 
 

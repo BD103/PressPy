@@ -2,6 +2,7 @@ wheel
 setuptools
 twine
 black
+flake8
 pytest
 click
 -e .

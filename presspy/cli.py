@@ -1,4 +1,4 @@
-import os, click
+import click
 import presspy
 
 
