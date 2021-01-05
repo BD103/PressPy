@@ -1,5 +1,7 @@
 # PressPy
 
+<img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/BD103/PressPy?color=9cf&style=for-the-badge"> <img alt="GitHub release" src="https://img.shields.io/github/v/release/BD103/PressPy?color=9cf&include_prereleases&style=for-the-badge"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/presspy?color=9cf&style=for-the-badge"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/BD103/PressPy?color=9cf&style=for-the-badge"> <img alt="PyPI - Status" src="https://img.shields.io/pypi/status/presspy?color=9cf&style=for-the-badge"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/PressPy?color=9cf&style=for-the-badge"> <img alt="PyPI" src="https://img.shields.io/pypi/v/PressPy?color=9cf&style=for-the-badge"> <img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/BD103/PressPy/master?color=9cf&style=for-the-badge"> <img alt="GitHub issues" src="https://img.shields.io/github/issues/BD103/PressPy?color=9cf&style=for-the-badge"> <img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/BD103/PressPy?color=9cf&style=for-the-badge"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/BD103/PressPy?color=9cf&style=for-the-badge">
+
 A Python compression software.
 
 ## Intallation
