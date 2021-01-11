@@ -2,8 +2,11 @@ import json
 import os
 import shutil
 import sys
-import time
-from zipfile import ZipFile
+import pkg_resources
+from zipfile import ZipFile, ZIP_STORED, ZIP_DEFLATED, ZIP_BZIP2, ZIP_LZMA
+import zlib
+import bz2
+import lzma
 
 import pkg_resources
 
@@ -98,7 +101,15 @@ def press(path):
         include.append(i)
 
     print("Writing .press file")
-    program = ZipFile("program.press", mode="w")
+    if meta["zip_type"] == "STORED":
+      compression_type = ZIP_STORED
+    elif meta["zip_type"] == "DEFLATED":
+      compression_type = ZIP_DEFLATED
+    elif meta["zip_type"] == "BZIP2":
+      compression_type = ZIP_BZIP2
+    elif meta["zip_type"] == "LZMA":
+      compression_type = ZIP_LZMA
+    program = ZipFile("program.press", "w", compression_type)
     for i in include:
         program.write(i)
     program.close()
