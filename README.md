@@ -1,4 +1,4 @@
-![PressPy](https://github.com/BD103/PressPy/raw/Images/imgs/PressPy_README.png)
+![PressPy](https://github.com/BD103/PressPy/raw/master/imgs/PressPy_README.png)
 
 ![Lines of code](https://img.shields.io/tokei/lines/github/BD103/PressPy?color=9cf&style=for-the-badge)
 ![Github release](https://img.shields.io/github/v/release/BD103/PressPy?color=9cf&include_prereleases&style=for-the-badge)
