@@ -82,13 +82,13 @@ def press(path):
 
     print("Writing .press file")
     if meta["zip_type"] == "STORED":
-      compression_type = ZIP_STORED
+        compression_type = ZIP_STORED
     elif meta["zip_type"] == "DEFLATED":
-      compression_type = ZIP_DEFLATED
+        compression_type = ZIP_DEFLATED
     elif meta["zip_type"] == "BZIP2":
-      compression_type = ZIP_BZIP2
+        compression_type = ZIP_BZIP2
     elif meta["zip_type"] == "LZMA":
-      compression_type = ZIP_LZMA
+        compression_type = ZIP_LZMA
     program = ZipFile("program.press", "w", compression_type)
     for i in include:
         program.write(i)
