@@ -1,6 +1,15 @@
-<img alt="PressPy" src="https://user-images.githubusercontent.com/59022059/103710707-b0c5df80-4f83-11eb-9021-e69f1e713548.png">
+![PressPy](https://github.com/BD103/PressPy/raw/Images/imgs/PressPy_README.png)
 
-<img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/BD103/PressPy?color=9cf&style=for-the-badge"> <img alt="GitHub release" src="https://img.shields.io/github/v/release/BD103/PressPy?color=9cf&include_prereleases&style=for-the-badge"> <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/presspy?color=9cf&style=for-the-badge"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/BD103/PressPy?color=9cf&style=for-the-badge"> <img alt="PyPI - Status" src="https://img.shields.io/pypi/status/presspy?color=9cf&style=for-the-badge"> <img alt="PyPI - License" src="https://img.shields.io/pypi/l/PressPy?color=9cf&style=for-the-badge"> <img alt="PyPI" src="https://img.shields.io/pypi/v/PressPy?color=9cf&style=for-the-badge"> <img alt="GitHub issues" src="https://img.shields.io/github/issues/BD103/PressPy?color=9cf&style=for-the-badge"> <img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/BD103/PressPy?color=9cf&style=for-the-badge"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/BD103/PressPy?color=9cf&style=for-the-badge">
+![Lines of code](https://img.shields.io/tokei/lines/github/BD103/PressPy?color=9cf&style=for-the-badge)
+![Github release](https://img.shields.io/github/v/release/BD103/PressPy?color=9cf&include_prereleases&style=for-the-badge)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/presspy?color=9cf&style=for-the-badge)
+![Latest commit](https://img.shields.io/github/last-commit/BD103/PressPy?color=9cf&style=for-the-badge)
+![PyPI - Status](https://img.shields.io/pypi/status/presspy?color=9cf&style=for-the-badge)
+![PyPI - License](https://img.shields.io/pypi/l/PressPy?color=9cf&style=for-the-badge)
+![PyPI](https://img.shields.io/pypi/v/PressPy?color=9cf&style=for-the-badge)
+![Github issues](https://img.shields.io/github/issues/BD103/PressPy?color=9cf&style=for-the-badge)
+![Github milestones](https://img.shields.io/github/milestones/all/BD103/PressPy?color=9cf&style=for-the-badge)
+![Github top language](https://img.shields.io/github/languages/top/BD103/PressPy?color=9cf&style=for-the-badge)
 
 A Python compression software.
 
