@@ -1,10 +1,11 @@
-import os
-import time
-import shutil
 import json
+import os
+import shutil
 import sys
-import pkg_resources
+import time
 from zipfile import ZipFile
+
+import pkg_resources
 
 
 def info():
@@ -27,7 +28,7 @@ def extract(file):
 
     # Gets meta
     print("Reading meta file")
-    with open("press.json", "r") as raw:
+    with open("press.lock", "r") as raw:
         meta = json.loads(raw.read())
 
     archive.close()
@@ -42,6 +43,26 @@ def extract(file):
     end_time = time.time()
     print("Process finished in " + str(end_time - start_time) + " seconds.")
     return meta
+
+
+def lock(file):
+    f = open(file)
+    config = json.loads(f.read())
+    f.close()
+
+    if "main" not in config:
+        config["main"] = "main.py"
+    if "dependencies" not in config:
+        config["dependencies"] = []
+    if "include" not in config:
+        config["include"] = []
+    config["version"] = pkg_resources.get_distribution(__name__).version
+
+    lock = json.dumps(config)
+
+    f = open("press.lock")
+    f.write(lock)
+    f.close()
 
 
 def run(file, keep):
@@ -64,13 +85,16 @@ def press(path):
     start_time = time.time()
     os.chdir(path)
 
-    print("Reading press.json")
-    with open("press.json") as raw:
+    print("Creating lock file")
+    lock("press.json")
+
+    print("Reading config")
+    with open("press.lock") as raw:
         meta = json.loads(raw.read())
 
     include = []
     include.append(meta["main"])
-    include.append("press.json")
+    include.append("press.lock")
     for i in meta["dependencies"]:
         if os.path.isfile(i):
             include.append(i)

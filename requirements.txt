@@ -3,6 +3,7 @@ setuptools
 twine
 black
 flake8
+isort
 pytest
 click
 -e .

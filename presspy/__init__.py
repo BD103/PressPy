@@ -1,6 +1,6 @@
 import pkg_resources
 
-from .press import info, extract, run, press
+from .press import extract, info, press, run
 
 __all__ = ["info", "extract", "run", "press"]
 
