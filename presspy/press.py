@@ -5,9 +5,6 @@ import json
 import sys
 import pkg_resources
 from zipfile import ZipFile, ZIP_STORED, ZIP_DEFLATED, ZIP_BZIP2, ZIP_LZMA
-import zlib
-import bz2
-import lzma
 
 
 def info():
