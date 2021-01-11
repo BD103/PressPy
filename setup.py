@@ -1,12 +1,11 @@
 import setuptools
 
-
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="presspy",
-    version="1.0.0",
+    version="2.0",
     author="BD103",
     author_email="dont@stalk.me",
     description="A Python Compression Software",

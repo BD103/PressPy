@@ -21,9 +21,11 @@ jobs:
           python-version: 3.8
       
       - name: Install dependencies
-        run: pip install -U pip flake8
+        run: pip install -U pip flake8 isort
 
       - name: Black
         uses: psf/black@stable
       - name: Flake8
         run: flake8 presspy
+      - name: Isort
+        run: isort presspy tests --profile black --check-only

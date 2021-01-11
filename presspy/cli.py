@@ -1,4 +1,5 @@
 import click
+
 import presspy
 
 
@@ -34,3 +35,8 @@ def press(path):
 def extract(file):
     "Puts source of .press file into folder."
     presspy.extract(file)
+
+
+@cli.command()
+def info():
+    presspy.info()

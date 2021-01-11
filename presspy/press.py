@@ -1,20 +1,11 @@
-import os
-import time
-import shutil
 import json
+import os
+import shutil
 import sys
+import time
+from zipfile import ZIP_BZIP2, ZIP_DEFLATED, ZIP_LZMA, ZIP_STORED, ZipFile
+
 import pkg_resources
-from zipfile import ZipFile, ZIP_STORED, ZIP_DEFLATED, ZIP_BZIP2, ZIP_LZMA
-import zlib
-import bz2
-import lzma
-
-
-def info():
-    print("PressPy Compression Software")
-    print("Designed by BD103")
-    print("Version: " + pkg_resources.get_distribution(__name__).version)
-    print('Enter "presspy" for help')
 
 
 def extract(file):
@@ -30,7 +21,7 @@ def extract(file):
 
     # Gets meta
     print("Reading meta file")
-    with open("press.json", "r") as raw:
+    with open("press.lock", "r") as raw:
         meta = json.loads(raw.read())
 
     archive.close()
@@ -47,11 +38,34 @@ def extract(file):
     return meta
 
 
+def lock(file):
+    f = open(file)
+    config = json.loads(f.read())
+    f.close()
+
+    if "main" not in config:
+        config["main"] = "main.py"
+    if "dependencies" not in config:
+        config["dependencies"] = []
+    if "include" not in config:
+        config["include"] = []
+    config["press_version"] = pkg_resources.get_distribution(__name__).version
+    if "version" not in config:
+        config["version"] = 1.0
+
+    lock = json.dumps(config)
+
+    f = open("press.lock")
+    f.write(lock)
+    f.close()
+
+
 def run(file, keep):
     meta = extract(file)
 
+    os.chdir("program")
     try:
-        os.system("python program/" + meta["main"])
+        os.system("python " + meta["main"])
     except:  # noqa: E722
         print(
             "An error occured in the program. Please contact the developer.",
@@ -66,13 +80,16 @@ def press(path):
     start_time = time.time()
     os.chdir(path)
 
-    print("Reading press.json")
-    with open("press.json") as raw:
+    print("Creating lock file")
+    lock("press.json")
+
+    print("Reading config")
+    with open("press.lock") as raw:
         meta = json.loads(raw.read())
 
     include = []
     include.append(meta["main"])
-    include.append("press.json")
+    include.append("press.lock")
     for i in meta["dependencies"]:
         if os.path.isfile(i):
             include.append(i)
@@ -82,13 +99,13 @@ def press(path):
 
     print("Writing .press file")
     if meta["zip_type"] == "STORED":
-      compression_type = ZIP_STORED
+        compression_type = ZIP_STORED
     elif meta["zip_type"] == "DEFLATED":
-      compression_type = ZIP_DEFLATED
+        compression_type = ZIP_DEFLATED
     elif meta["zip_type"] == "BZIP2":
-      compression_type = ZIP_BZIP2
+        compression_type = ZIP_BZIP2
     elif meta["zip_type"] == "LZMA":
-      compression_type = ZIP_LZMA
+        compression_type = ZIP_LZMA
     program = ZipFile("program.press", "w", compression_type)
     for i in include:
         program.write(i)
