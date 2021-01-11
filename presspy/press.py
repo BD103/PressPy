@@ -47,8 +47,9 @@ def extract(file):
 def run(file, keep):
     meta = extract(file)
 
+    os.chdir("program")
     try:
-        os.system("python program/" + meta["main"])
+        os.system("python " + meta["main"])
     except:  # noqa: E722
         print(
             "An error occured in the program. Please contact the developer.",
