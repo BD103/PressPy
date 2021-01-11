@@ -56,7 +56,8 @@ def lock(file):
         config["dependencies"] = []
     if "include" not in config:
         config["include"] = []
-    config["version"] = pkg_resources.get_distribution(__name__).version
+    config["press_version"] = pkg_resources.get_distribution(__name__).version
+    if "version" not in config: config["version"] = 1.0
 
     lock = json.dumps(config)
 
