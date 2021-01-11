@@ -8,13 +8,6 @@ from zipfile import ZipFile
 import pkg_resources
 
 
-def info():
-    print("PressPy Compression Software")
-    print("Designed by BD103")
-    print("Version: " + pkg_resources.get_distribution(__name__).version)
-    print('Enter "presspy" for help')
-
-
 def extract(file):
     # Starts timer
     start_time = time.time()
