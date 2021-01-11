@@ -76,6 +76,7 @@ After editing the code, run it through our checks:
 ```console
 pip install -r requirements.txt
 black presspy tests
+isort presspy tests --profile black
 flake8
 pytest
 ```
@@ -86,9 +87,16 @@ All done! ✨ 🍰 ✨
 1 file reformatted, 3 files left unchanged.
 ```
 
-Flake8 should return any other formatting errors and a count, so you should see:
+Isort should output the following if it needs to fix anything:
 ```console
-0
+Fixing path/to/presspy/__init__.py
+Fixing path/to/presspy/press.py
+```
+
+Flake8 should return any other formatting errors and a count, so you should see a 0 if there are no errors. Else, it would return errors like:
+```console
+./path/to/press.py:74:5: E722 do not use bare 'except'
+1
 ```
 
 Last, Pytest should tell you:
